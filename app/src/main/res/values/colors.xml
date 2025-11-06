@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    File: res/values/colors.xml
+    Định nghĩa các màu sắc sử dụng trong ứng dụng.
+-->
+<resources>
+    <!-- Màu chính -->
+    <color name="colorPrimary">#2563EB</color> <!-- Blue-600 -->
+    <color name="colorPrimaryDark">#1D4ED8</color> <!-- Blue-700 -->
+    <color name="colorAccent">#3B82F6</color> <!-- Blue-500 -->
+
+    <!-- Màu cơ bản -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Màu xám (Grays) -->
+    <color name="gray_50">#F9FAFB</color>
+    <color name="gray_100">#F3F4F6</color>
+    <color name="gray_200">#E5E7EB</color>
+    <color name="gray_500">#6B7280</color>
+    <color name="gray_700">#374151</color>
+
+    <!-- Màu chức năng -->
+    <color name="green_salary">#10B981</color>
+    <color name="blue_chip_bg">#DBEAFE</color>
+    <color name="blue_chip_text">#1E40AF</color>
+</resources>
