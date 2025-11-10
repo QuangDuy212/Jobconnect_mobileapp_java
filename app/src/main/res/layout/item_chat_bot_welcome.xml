@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Welcome message from Bot -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="start"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:padding="@dimen/padding_small">
+
+    <ImageView
+        android:layout_width="@dimen/icon_medium"
+        android:layout_height="@dimen/icon_medium"
+        android:src="@android:drawable/sym_def_app_icon"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:contentDescription="@string/cd_support_icon"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="@dimen/margin_xlarge"
+        android:maxWidth="280dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chat_greeting"
+            android:background="@drawable/bg_chat_bot"
+            android:padding="@dimen/padding_medium"
+            android:textSize="@dimen/text_size_normal"
+            android:textColor="@color/text_primary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bây giờ"
+            android:textSize="@dimen/text_size_tiny"
+            android:textColor="@color/text_hint"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:layout_marginStart="@dimen/margin_small"/>
+    </LinearLayout>
+
+</LinearLayout>

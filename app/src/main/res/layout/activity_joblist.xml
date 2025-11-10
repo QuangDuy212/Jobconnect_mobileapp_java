@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    File: res/layout/activity_job_list.xml
+    Màn hình chính hiển thị danh sách công việc.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".JobListActivity">
+
+    <!-- 1. Header (Thanh tìm kiếm và tiêu đề) -->
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JobConnect"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:id="@+id/btn_notifications"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_notifications_outline"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:contentDescription="Notifications"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:hint="Tìm kiếm công việc (ví dụ: Java)"
+            android:background="@drawable/searchbar_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="12dp"
+            android:inputType="text"
+            android:autofillHints="name" />
+    </LinearLayout>
+
+    <!-- 2. Bộ lọc nhanh -->
+    <HorizontalScrollView
+        android:id="@+id/filter_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_layout"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        android:clipToPadding="false"
+        android:background="#F9FAFB"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ChipStyle.Selected"
+                android:text="Tất cả"/>
+            <TextView
+                style="@style/ChipStyle"
+                android:text="Mới nhất"/>
+            <TextView
+                style="@style/ChipStyle"
+                android:text="Remote"/>
+            <TextView
+                style="@style/ChipStyle"
+                android:text="Part-time"/>
+            <TextView
+                style="@style/ChipStyle"
+                android:text="Senior"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- 3. Thanh điều hướng dưới cùng -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:elevation="8dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- 4. Danh sách công việc (RecyclerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_job_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/filter_scrollview"
+        android:layout_above="@id/bottom_navigation"
+        android:padding="12dp"
+        android:background="#F9FAFB"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_jobcard" />
+
+</RelativeLayout>

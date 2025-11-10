@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    File: res/layout/item_job_card.xml
+    Layout cho mỗi item trong RecyclerView của danh sách công việc.
+-->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_company_logo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/company_logo_placeholder"
+                android:background="#E2E8F0"
+                android:padding="8dp"
+                android:layout_marginEnd="12dp"/>
+
+            <ImageView
+                android:id="@+id/btn_bookmark_item"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_bookmark_outline"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf="@id/img_company_logo"
+                android:layout_toStartOf="@id/btn_bookmark_item"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/tv_job_title_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Java Backend Developer (Spring)"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/tv_company_name_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Công ty Công nghệ ABC"
+                    android:textSize="14sp"
+                    android:textColor="#4B5563"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_salary_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lên đến $2500"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#10B981"/>
+
+            <TextView
+                android:id="@+id/tv_location_item"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="TP. Hồ Chí Minh • Q.1"
+                android:textSize="14sp"
+                android:textColor="#6B7280"
+                android:gravity="end"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                style="@style/ChipStyle.Small"
+                android:text="Java"/>
+            <TextView
+                style="@style/ChipStyle.Small"
+                android:text="Spring Boot"/>
+            <TextView
+                style="@style/ChipStyle.Small"
+                android:text="Remote"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

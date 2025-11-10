@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    File: res/layout/activity_job_detail.xml
+    Màn hình chi tiết công việc.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".JobDetailActivity">
+
+    <!-- 1. Thanh công cụ (Header) -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:contentDescription="Back"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi tiết công việc"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_toEndOf="@id/btn_back"
+                android:layout_marginStart="16dp"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:id="@+id/btn_share"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_share"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Share"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <ImageView
+                android:id="@+id/btn_bookmark"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_bookmark_outline"
+                android:layout_toStartOf="@id/btn_share"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:contentDescription="Bookmark"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- 2. Nút Ứng tuyển (Footer) -->
+    <LinearLayout
+        android:id="@+id/footer_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:background="@color/white"
+        android:elevation="8dp">
+
+        <Button
+            android:id="@+id/btn_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ứng tuyển ngay"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:paddingVertical="14dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+    <!-- 3. Nội dung chính (cuộn) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/footer_apply"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Thông tin tóm tắt -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:background="#F9FAFB">
+
+                <ImageView
+                    android:id="@+id/img_company_logo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/company_logo_placeholder"
+                    android:layout_marginBottom="12dp"
+                    android:background="#E2E8F0"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_job_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Java Backend Developer (Spring)"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/tv_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Công ty Công nghệ ABC"
+                    android:textSize="16sp"
+                    android:textColor="#4B5563"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:id="@+id/tv_salary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lên đến $2500"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#10B981"
+                    android:layout_marginTop="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TP. Hồ Chí Minh"
+                        android:drawableStart="@drawable/ic_location"
+                        android:drawablePadding="6dp"
+                        android:textColor="#6B7280"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/tv_job_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Full-time"
+                        android:drawableStart="@drawable/ic_time"
+                        android:drawablePadding="6dp"
+                        android:textColor="#6B7280"
+                        android:gravity="center_vertical"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Chi tiết (Mô tả, Yêu cầu...) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/DetailSectionTitle"
+                    android:text="Mô tả công việc"/>
+                <TextView
+                    android:id="@+id/tv_job_description"
+                    style="@style/DetailSectionContent"
+                    android:text="- Tham gia phát triển các hệ thống backend sử dụng Java, Spring Boot.
+- Phân tích yêu cầu, thiết kế và triển khai các API.
+- Làm việc với cơ sở dữ liệu (MySQL, PostgreSQL).
+- Tối ưu hóa hiệu năng và bảo trì hệ thống."/>
+
+                <TextView
+                    style="@style/DetailSectionTitle"
+                    android:layout_marginTop="20dp"
+                    android:text="Yêu cầu ứng viên"/>
+                <TextView
+                    android:id="@+id/tv_job_requirements"
+                    style="@style/DetailSectionContent"
+                    android:text="- Ít nhất 2 năm kinh nghiệm với Java Core và Spring Boot.
+- Có kinh nghiệm làm việc với RESTful API, Microservices.
+- Hiểu biết về OOP, Design Patterns.
+- Tư duy logic tốt, chủ động trong công việc."/>
+
+                <TextView
+                    style="@style/DetailSectionTitle"
+                    android:layout_marginTop="20dp"
+                    android:text="Quyền lợi được hưởng"/>
+                <TextView
+                    android:id="@+id/tv_job_benefits"
+                    style="@style/DetailSectionContent"
+                    android:text="- Mức lương cạnh tranh, thưởng dự án, lương tháng 13.
+- Môi trường làm việc trẻ, năng động.
+- Được cung cấp trang thiết bị làm việc (Macbook...).
+- Bảo hiểm đầy đủ và bảo hiểm sức khỏe cao cấp."/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

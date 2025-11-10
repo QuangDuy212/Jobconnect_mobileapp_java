@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">JobConnect</string>
+    <!-- Main Activity -->
+    <string name="main_welcome">Chào mừng đến với App</string>
+    <string name="main_subtitle">Quản lý thông tin và hỗ trợ khách hàng</string>
+    <string name="main_version">Version 1.0</string>
+
+    <!-- Menu Items -->
+    <string name="menu_user_profile">Thông tin cá nhân</string>
+    <string name="menu_user_profile_desc">Cập nhật thông tin của bạn</string>
+    <string name="menu_customer_support">Chăm sóc khách hàng</string>
+    <string name="menu_customer_support_desc">Hỗ trợ 24/7, Chat, FAQ</string>
+    <string name="menu_button_enter">Vào</string>
+
+    <!-- User Profile Activity -->
+    <string name="profile_title">Thông Tin Cá Nhân</string>
+    <string name="profile_avatar_change">Thay đổi ảnh đại diện</string>
+
+    <!-- Form Labels -->
+    <string name="label_full_name">Họ và tên *</string>
+    <string name="label_email">Email *</string>
+    <string name="label_phone">Số điện thoại *</string>
+    <string name="label_address">Địa chỉ</string>
+
+    <!-- Form Hints -->
+    <string name="hint_full_name">Nhập họ và tên</string>
+    <string name="hint_email">example@email.com</string>
+    <string name="hint_phone">0123456789</string>
+    <string name="hint_address">Nhập địa chỉ của bạn</string>
+    <string name="hint_message">Nhập tin nhắn...</string>
+
+    <!-- Buttons -->
+    <string name="btn_save">Lưu thay đổi</string>
+    <string name="btn_cancel">Hủy</string>
+    <string name="btn_send">Gửi</string>
+    <string name="btn_call">Gọi ngay</string>
+    <string name="btn_send_email">Gửi email</string>
+
+    <!-- Validation Messages -->
+    <string name="error_name_required">Vui lòng nhập họ tên</string>
+    <string name="error_email_invalid">Email không hợp lệ</string>
+    <string name="error_phone_invalid">Số điện thoại không hợp lệ</string>
+    <string name="error_message_empty">Vui lòng nhập nội dung tin nhắn</string>
+
+    <!-- Success Messages -->
+    <string name="success_profile_updated">Cập nhật thông tin thành công!</string>
+    <string name="success_message_sent">Tin nhắn đã được gửi! Chúng tôi sẽ phản hồi sớm.</string>
+
+    <!-- Customer Support Activity -->
+    <string name="support_title">Chăm Sóc Khách Hàng</string>
+    <string name="support_subtitle">Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7</string>
+
+    <!-- Tabs -->
+    <string name="tab_chat">Chat</string>
+    <string name="tab_faq">FAQ</string>
+    <string name="tab_contact">Liên hệ</string>
+
+    <!-- Chat Section -->
+    <string name="chat_greeting">Xin chào! Tôi có thể giúp gì cho bạn?</string>
+
+    <!-- FAQ Section -->
+    <string name="faq_question_1">Làm thế nào để đặt hàng?</string>
+    <string name="faq_answer_1">Bạn có thể đặt hàng qua ứng dụng bằng cách chọn sản phẩm và thêm vào giỏ hàng, sau đó tiến hành thanh toán.</string>
+
+    <string name="faq_question_2">Thời gian giao hàng là bao lâu?</string>
+    <string name="faq_answer_2">Thời gian giao hàng thông thường là 2-3 ngày làm việc đối với nội thành và 3-5 ngày đối với ngoại thành.</string>
+
+    <string name="faq_question_3">Chính sách đổi trả như thế nào?</string>
+    <string name="faq_answer_3">Bạn có thể đổi trả sản phẩm trong vòng 7 ngày kể từ ngày nhận hàng nếu sản phẩm còn nguyên vẹn và chưa sử dụng.</string>
+
+    <string name="faq_question_4">Các phương thức thanh toán được hỗ trợ?</string>
+    <string name="faq_answer_4">Chúng tôi hỗ trợ thanh toán qua COD, chuyển khoản ngân hàng, ví điện tử (Momo, ZaloPay) và thẻ tín dụng.</string>
+
+    <string name="faq_question_5">Làm sao để theo dõi đơn hàng?</string>
+    <string name="faq_answer_5">Bạn có thể theo dõi đơn hàng trong mục \"Đơn hàng của tôi\" trên ứng dụng. Chúng tôi sẽ cập nhật trạng thái đơn hàng theo thời gian thực.</string>
+
+    <!-- Contact Section -->
+    <string name="contact_hotline_title">Hotline</string>
+    <string name="contact_hotline_number">1900 xxxx</string>
+
+    <string name="contact_email_title">Email</string>
+    <string name="contact_email_address">support@example.com</string>
+
+    <string name="contact_office_title">Văn phòng</string>
+    <string name="contact_office_address">123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</string>
+    <string name="contact_office_hours">Giờ làm việc: 8:00 - 17:00 (Thứ 2 - Thứ 6)</string>
+
+    <!-- Content Descriptions (for accessibility) -->
+    <string name="cd_avatar">Ảnh đại diện người dùng</string>
+    <string name="cd_app_logo">Logo ứng dụng</string>
+    <string name="cd_profile_icon">Icon thông tin cá nhân</string>
+    <string name="cd_support_icon">Icon chăm sóc khách hàng</string>
+    <string name="cd_phone_icon">Icon điện thoại</string>
+    <string name="cd_email_icon">Icon email</string>
+    <string name="cd_location_icon">Icon vị trí</string>
+</resources>

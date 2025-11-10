@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Message from User (right side) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="end"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:padding="@dimen/padding_small">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:maxWidth="280dp">
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tin nhắn từ người dùng"
+            android:background="@drawable/bg_chat_user"
+            android:padding="@dimen/padding_medium"
+            android:textSize="@dimen/text_size_normal"
+            android:textColor="@color/white"
+            android:layout_gravity="end"/>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:30"
+            android:textSize="@dimen/text_size_tiny"
+            android:textColor="@color/text_hint"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:layout_marginEnd="@dimen/margin_small"/>
+    </LinearLayout>
+
+</LinearLayout>

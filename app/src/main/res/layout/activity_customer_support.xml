@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".CustomerSupportActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="@string/support_title"
+        app:titleTextColor="@color/white" />
+
+    <!-- Simple Button Tabs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btnChat"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="@string/tab_chat"
+            android:textColor="@color/black"
+            android:background="@color/tab_active"/>
+
+        <Button
+            android:id="@+id/btnFAQ"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="@string/tab_faq"
+            android:textColor="@color/black"
+            android:background="@color/tab_inactive"/>
+
+        <Button
+            android:id="@+id/btnContact"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="@string/tab_contact"
+            android:textColor="@color/black"
+            android:background="@color/tab_inactive"/>
+    </LinearLayout>
+
+    <!-- Content Container -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- ============================================ -->
+        <!-- CHAT SECTION -->
+        <!-- ============================================ -->
+        <LinearLayout
+            android:id="@+id/layoutChat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <!-- Chat Messages Area -->
+            <ScrollView
+                android:id="@+id/chatScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:background="@color/background">
+
+                <LinearLayout
+                    android:id="@+id/chatMessagesContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Welcome message from bot -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="start"
+                        android:layout_marginBottom="16dp"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@android:drawable/sym_def_app_icon"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="@string/cd_support_icon"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="40dp"
+                            android:maxWidth="280dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/chat_greeting"
+                                android:background="@color/white"
+                                android:padding="12dp"
+                                android:textSize="14sp"
+                                android:textColor="@color/text_primary"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bây giờ"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_hint"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginStart="8dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- Message Input Area -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@color/white"
+                android:elevation="8dp"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/edtMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_message"
+                    android:padding="12dp"
+                    android:background="@color/background"
+                    android:minHeight="40dp"
+                    android:maxLines="4"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="textMultiLine"
+                    android:importantForAutofill="no"
+                    tools:ignore="LabelFor" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSendMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_send"
+                    android:contentDescription="@string/btn_send"
+                    app:backgroundTint="@color/primary"
+                    app:tint="@color/white"
+                    app:fabSize="mini" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ============================================ -->
+        <!-- FAQ SECTION -->
+        <!-- ============================================ -->
+        <ScrollView
+            android:id="@+id/layoutFAQ"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Câu hỏi thường gặp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- FAQ Item 1 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faqCard1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_question_1"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:drawableStart="@android:drawable/ic_menu_help"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_answer_1"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary_minh"
+                            android:lineSpacingExtra="4dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- FAQ Item 2 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faqCard2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_question_2"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:drawableStart="@android:drawable/ic_menu_help"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_answer_2"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary_minh"
+                            android:lineSpacingExtra="4dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- FAQ Item 3 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faqCard3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_question_3"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:drawableStart="@android:drawable/ic_menu_help"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_answer_3"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary_minh"
+                            android:lineSpacingExtra="4dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- FAQ Item 4 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faqCard4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_question_4"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:drawableStart="@android:drawable/ic_menu_help"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_answer_4"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary_minh"
+                            android:lineSpacingExtra="4dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- FAQ Item 5 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faqCard5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_question_5"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:drawableStart="@android:drawable/ic_menu_help"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq_answer_5"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary_minh"
+                            android:lineSpacingExtra="4dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ============================================ -->
+        <!-- CONTACT SECTION -->
+        <!-- ============================================ -->
+        <ScrollView
+            android:id="@+id/layoutContact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Liên hệ với chúng tôi"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- Hotline Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@android:drawable/ic_menu_call"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@string/cd_phone_icon"
+                            app:tint="@color/success" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_hotline_title"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_hotline_number"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/success"
+                            android:layout_marginBottom="16dp"/>
+
+                        <Button
+                            android:id="@+id/btnCallHotline"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="@string/btn_call"
+                            android:textColor="@color/white"
+                            android:background="@color/success"
+                            android:drawableStart="@android:drawable/ic_menu_call"
+                            android:drawableTint="@color/white"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Email Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@android:drawable/ic_dialog_email"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@string/cd_email_icon"
+                            app:tint="@color/primary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_email_title"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_email_address"
+                            android:textSize="16sp"
+                            android:textColor="@color/primary"
+                            android:layout_marginBottom="16dp"/>
+
+                        <Button
+                            android:id="@+id/btnSendEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="@string/btn_send_email"
+                            android:textColor="@color/white"
+                            android:background="@color/primary"
+                            android:drawableStart="@android:drawable/ic_dialog_email"
+                            android:drawableTint="@color/white"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Office Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@android:drawable/ic_dialog_map"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@string/cd_location_icon"
+                            app:tint="@color/warning" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_office_title"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_office_address"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary_minh"
+                            android:gravity="center"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_office_hours"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_hint"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+
+</LinearLayout>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:background="@color/background">-->
+
+<!--    &lt;!&ndash; Toolbar &ndash;&gt;-->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="@color/primary"-->
+<!--        android:elevation="4dp"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+<!--        app:title="@string/support_title"-->
+<!--        app:titleTextColor="@color/white" />-->
+
+<!--    &lt;!&ndash; Tab Navigation &ndash;&gt;-->
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/white"-->
+<!--        android:elevation="4dp"-->
+<!--        app:tabIndicatorColor="@color/primary"-->
+<!--        app:tabSelectedTextColor="@color/primary"-->
+<!--        app:tabTextColor="@color/text_secondary">-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/tabChat"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/tab_chat" />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/tabFAQ"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/tab_faq" />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/tabContact"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/tab_contact" />-->
+<!--    </com.google.android.material.tabs.TabLayout>-->
+
+<!--    &lt;!&ndash; Alternative: Simple Button Tabs &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@color/white"-->
+<!--        android:elevation="4dp">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnChat"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@string/tab_chat"-->
+<!--            android:textColor="@color/accent"-->
+<!--            android:background="@color/black"-->
+<!--            style="@style/TabButton"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnFAQ"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@string/tab_faq"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:background="@color/black"-->
+<!--            style="@style/TabButton"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnContact"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@string/tab_contact"-->
+<!--            android:textColor="@color/accent"-->
+<!--            android:background="@color/black"-->
+<!--            style="@style/TabButton"/>-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; Content Container &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        &lt;!&ndash; ============================================ &ndash;&gt;-->
+<!--        &lt;!&ndash; CHAT SECTION &ndash;&gt;-->
+<!--        &lt;!&ndash; ============================================ &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/layoutChat"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            android:visibility="visible">-->
+
+<!--            &lt;!&ndash; Chat Messages Area &ndash;&gt;-->
+<!--            <ScrollView-->
+<!--                android:id="@+id/chatScrollView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:padding="@dimen/padding_medium"-->
+<!--                android:background="@color/background">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/chatMessagesContainer"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    &lt;!&ndash; Welcome message from bot &ndash;&gt;-->
+<!--                    <include layout="@layout/item_chat_bot_welcome" />-->
+
+<!--                </LinearLayout>-->
+<!--            </ScrollView>-->
+
+<!--            &lt;!&ndash; Message Input Area &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="@dimen/padding_medium"-->
+<!--                android:background="@color/white"-->
+<!--                android:elevation="8dp"-->
+<!--                android:gravity="center_vertical">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/edtMessage"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:autofillHints=""-->
+<!--                    android:hint="@string/hint_message"-->
+<!--                    android:padding="@dimen/padding_medium"-->
+<!--                    android:background="@drawable/bg_message_input"-->
+<!--                    android:minHeight="@dimen/button_height_small"-->
+<!--                    android:maxLines="4"-->
+<!--                    android:layout_marginEnd="@dimen/margin_small"/>-->
+
+<!--                <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                    android:id="@+id/btnSendMessage"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@android:drawable/ic_menu_send"-->
+<!--                    app:backgroundTint="@color/primary"-->
+<!--                    app:tint="@color/white"-->
+<!--                    app:fabSize="mini" />-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; ============================================ &ndash;&gt;-->
+<!--        &lt;!&ndash; FAQ SECTION &ndash;&gt;-->
+<!--        &lt;!&ndash; ============================================ &ndash;&gt;-->
+<!--        <ScrollView-->
+<!--            android:id="@+id/layoutFAQ"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:visibility="gone"-->
+<!--            android:padding="@dimen/padding_medium">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Câu hỏi thường gặp"-->
+<!--                    android:textSize="@dimen/text_size_large"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/text_primary"-->
+<!--                    android:layout_marginBottom="@dimen/margin_medium"/>-->
+
+<!--                &lt;!&ndash; FAQ Item 1 &ndash;&gt;-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/faqCard1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_small"-->
+<!--                    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--                    app:cardElevation="@dimen/card_elevation"-->
+<!--                    android:foreground="?attr/selectableItemBackground">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/padding_large">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_question_1"-->
+<!--                            android:textSize="@dimen/text_size_medium"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:drawableStart="@android:drawable/ic_menu_help"-->
+<!--                            android:drawablePadding="@dimen/padding_small"-->
+<!--                            android:drawableTint="@color/primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_answer_1"-->
+<!--                            android:textSize="@dimen/text_size_normal"-->
+<!--                            android:textColor="@color/text_secondary"-->
+<!--                            android:lineSpacingExtra="4dp"/>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                &lt;!&ndash; FAQ Item 2 &ndash;&gt;-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/faqCard2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_small"-->
+<!--                    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--                    app:cardElevation="@dimen/card_elevation"-->
+<!--                    android:foreground="?attr/selectableItemBackground">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/padding_large">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_question_2"-->
+<!--                            android:textSize="@dimen/text_size_medium"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:drawableStart="@android:drawable/ic_menu_help"-->
+<!--                            android:drawablePadding="@dimen/padding_small"-->
+<!--                            android:drawableTint="@color/primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_answer_2"-->
+<!--                            android:textSize="@dimen/text_size_normal"-->
+<!--                            android:textColor="@color/text_secondary"-->
+<!--                            android:lineSpacingExtra="4dp"/>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                &lt;!&ndash; FAQ Item 3 &ndash;&gt;-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/faqCard3"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_small"-->
+<!--                    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--                    app:cardElevation="@dimen/card_elevation"-->
+<!--                    android:foreground="?attr/selectableItemBackground">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/padding_large">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_question_3"-->
+<!--                            android:textSize="@dimen/text_size_medium"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:drawableStart="@android:drawable/ic_menu_help"-->
+<!--                            android:drawablePadding="@dimen/padding_small"-->
+<!--                            android:drawableTint="@color/primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_answer_3"-->
+<!--                            android:textSize="@dimen/text_size_normal"-->
+<!--                            android:textColor="@color/text_secondary"-->
+<!--                            android:lineSpacingExtra="4dp"/>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                &lt;!&ndash; FAQ Item 4 &ndash;&gt;-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/faqCard4"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_small"-->
+<!--                    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--                    app:cardElevation="@dimen/card_elevation"-->
+<!--                    android:foreground="?attr/selectableItemBackground">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/padding_large">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_question_4"-->
+<!--                            android:textSize="@dimen/text_size_medium"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:drawableStart="@android:drawable/ic_menu_help"-->
+<!--                            android:drawablePadding="@dimen/padding_small"-->
+<!--                            android:drawableTint="@color/primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_answer_4"-->
+<!--                            android:textSize="@dimen/text_size_normal"-->
+<!--                            android:textColor="@color/text_secondary"-->
+<!--                            android:lineSpacingExtra="4dp"/>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                &lt;!&ndash; FAQ Item 5 &ndash;&gt;-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/faqCard5"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_small"-->
+<!--                    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--                    app:cardElevation="@dimen/card_elevation"-->
+<!--                    android:foreground="?attr/selectableItemBackground">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/padding_large">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_question_5"-->
+<!--                            android:textSize="@dimen/text_size_medium"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:drawableStart="@android:drawable/ic_menu_help"-->
+<!--                            android:drawablePadding="@dimen/padding_small"-->
+<!--                            android:drawableTint="@color/primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/faq_answer_5"-->
+<!--                            android:textSize="@dimen/text_size_normal"-->
+<!--                            android:textColor="@color/text_secondary"-->
+<!--                            android:lineSpacingExtra="4dp"/>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--            </LinearLayout>-->
+<!--        </ScrollView>-->
+
+<!--        &lt;!&ndash; ============================================ &ndash;&gt;-->
+<!--        &lt;!&ndash; CONTACT SECTION &ndash;&gt;-->
+<!--        &lt;!&ndash; ============================================ &ndash;&gt;-->
+<!--        <ScrollView-->
+<!--            android:id="@+id/layoutContact"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:visibility="gone"-->
+<!--            android:padding="@dimen/padding_xlarge">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Liên hệ với chúng tôi"-->
+<!--                    android:textSize="@dimen/text_size_large"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/text_primary"-->
+<!--                    android:layout_marginBottom="@dimen/margin_large"/>-->
+
+<!--                &lt;!&ndash; Hotline Card &ndash;&gt;-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_medium"-->
+<!--                    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--                    app:cardElevation="@dimen/card_elevation">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/padding_xlarge"-->
+<!--                        android:gravity="center">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/icon_large"-->
+<!--                            android:layout_height="@dimen/icon_large"-->
+<!--                            android:src="@android:drawable/ic_menu_call"-->
+<!--                            android:tint="@color/success"-->
+<!--                            android:layout_marginBottom="@dimen/margin_medium"-->
+<!--                            android:contentDescription="@string/cd_phone_icon"-->
+<!--                            tools:ignore="UseAppTint" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/contact_hotline_title"-->
+<!--                            android:textSize="@dimen/text_size_large"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/contact_hotline_number"-->
+<!--                            android:textSize="@dimen/text_size_xlarge"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/success"-->
+<!--                            android:layout_marginBottom="@dimen/margin_medium"/>-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/btnCallHotline"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="@dimen/button_height"-->
+<!--                            android:text="@string/btn_call"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:background="@color/success"-->
+<!--                            android:drawableStart="@android:drawable/ic_menu_call"-->
+<!--                            android:drawableTint="@color/white"/>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                &lt;!&ndash; Email Card &ndash;&gt;-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_medium"-->
+<!--                    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--                    app:cardElevation="@dimen/card_elevation">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/padding_xlarge"-->
+<!--                        android:gravity="center">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/icon_large"-->
+<!--                            android:layout_height="@dimen/icon_large"-->
+<!--                            android:src="@android:drawable/ic_dialog_email"-->
+<!--                            android:layout_marginBottom="@dimen/margin_medium"-->
+<!--                            android:contentDescription="@string/cd_email_icon"-->
+<!--                            app:tint="@color/primary" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/contact_email_title"-->
+<!--                            android:textSize="@dimen/text_size_large"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/contact_email_address"-->
+<!--                            android:textSize="@dimen/text_size_medium"-->
+<!--                            android:textColor="@color/primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_medium"/>-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/btnSendEmail"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="@dimen/button_height"-->
+<!--                            android:text="@string/btn_send_email"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:background="@color/primary"-->
+<!--                            android:drawableStart="@android:drawable/ic_dialog_email"-->
+<!--                            android:drawableTint="@color/white"/>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                &lt;!&ndash; Office Card &ndash;&gt;-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--                    app:cardElevation="@dimen/card_elevation">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/padding_xlarge"-->
+<!--                        android:gravity="center">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/icon_large"-->
+<!--                            android:layout_height="@dimen/icon_large"-->
+<!--                            android:src="@android:drawable/ic_dialog_map"-->
+<!--                            android:layout_marginBottom="@dimen/margin_medium"-->
+<!--                            android:contentDescription="@string/cd_location_icon"-->
+<!--                            app:tint="@color/warning" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/contact_office_title"-->
+<!--                            android:textSize="@dimen/text_size_large"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/contact_office_address"-->
+<!--                            android:textSize="@dimen/text_size_normal"-->
+<!--                            android:textColor="@color/text_secondary"-->
+<!--                            android:gravity="center"-->
+<!--                            android:layout_marginBottom="@dimen/margin_small"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/contact_office_hours"-->
+<!--                            android:textSize="@dimen/text_size_small"-->
+<!--                            android:textColor="@color/text_hint"-->
+<!--                            android:gravity="center"/>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--            </LinearLayout>-->
+<!--        </ScrollView>-->
+
+<!--    </FrameLayout>-->
+
+<!--</LinearLayout>-->
