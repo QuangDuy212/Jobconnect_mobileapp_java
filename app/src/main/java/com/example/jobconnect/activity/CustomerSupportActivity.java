@@ -1,4 +1,4 @@
-package com.example.jobconnect;
+package com.example.jobconnect.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+
+import com.example.jobconnect.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

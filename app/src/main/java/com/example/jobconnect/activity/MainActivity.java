@@ -1,4 +1,4 @@
-package com.example.jobconnect;
+package com.example.jobconnect.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.jobconnect.R;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {

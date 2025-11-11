@@ -1,4 +1,4 @@
-package com.example.jobconnect;
+package com.example.jobconnect.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +16,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.jobconnect.R;
 
 import java.io.IOException;
 

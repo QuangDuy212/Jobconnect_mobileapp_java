@@ -1,6 +1,6 @@
 
 
-package com.example.jobconnect;
+package com.example.jobconnect.activity;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.jobconnect.R;
 import com.example.jobconnect.models.CompanyModel;
 
 public class CompanyDetailActivity extends AppCompatActivity {

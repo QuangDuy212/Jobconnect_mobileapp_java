@@ -1,6 +1,6 @@
 
 
-package com.example.jobconnect;
+package com.example.jobconnect.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.jobconnect.R;
 import com.example.jobconnect.adapters.CompanyAdapter;
 import com.example.jobconnect.models.CompanyModel;
 
