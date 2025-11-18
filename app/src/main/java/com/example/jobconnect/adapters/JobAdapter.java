@@ -68,10 +68,10 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
         public JobViewHolder(@NonNull View itemView) {
             super(itemView);
             // Ánh xạ View từ layout item_jobcard.xml
-            tvJobTitle = itemView.findViewById(R.id.tv_job_title); // Cần kiểm tra ID này
+            tvJobTitle = itemView.findViewById(R.id.tv_job_title_item); // Cần kiểm tra ID này
             tvCompanyName = itemView.findViewById(R.id.tv_company_name); // Cần kiểm tra ID này
-            tvLocation = itemView.findViewById(R.id.tv_location); // Cần kiểm tra ID này
-            tvSalary = itemView.findViewById(R.id.tv_salary); // Cần kiểm tra ID này
+            tvLocation = itemView.findViewById(R.id.tv_location_item); // Cần kiểm tra ID này
+            tvSalary = itemView.findViewById(R.id.tv_salary_item); // Cần kiểm tra ID này
             // ivLogo = itemView.findViewById(R.id.ivLogo);
         }
 
